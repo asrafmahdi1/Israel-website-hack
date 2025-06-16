@@ -3,149 +3,131 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>!!! HACKED !!!</title>
+<title>Attack Notice</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto+Mono&display=swap');
 
   body {
     margin: 0;
-    background: black;
-    color: #00ff00;
-    font-family: 'Share Tech Mono', monospace;
+    background: linear-gradient(135deg, #0b3d91, #008000);
+    color: #eee;
+    font-family: 'Roboto Mono', monospace;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
-  .glitch {
-    font-size: 5rem;
-    font-weight: bold;
-    position: relative;
-    color: #f00;
-    animation: glitch 1s infinite;
-    text-transform: uppercase;
+  header {
+    background: #111;
+    padding: 15px 20px;
     text-align: center;
-    margin-top: 10vh;
-  }
-
-  @keyframes glitch {
-    0% {
-      text-shadow:
-        2px 0 red,
-        -2px 0 cyan;
-    }
-    20% {
-      text-shadow:
-        -2px 0 red,
-        2px 0 cyan;
-    }
-    40% {
-      text-shadow:
-        2px 0 red,
-        -2px 0 cyan;
-    }
-    60% {
-      text-shadow:
-        -2px 0 red,
-        2px 0 cyan;
-    }
-    80% {
-      text-shadow:
-        2px 0 red,
-        -2px 0 cyan;
-    }
-    100% {
-      text-shadow:
-        -2px 0 red,
-        2px 0 cyan;
-    }
-  }
-
-  .subtitle {
-    font-size: 2rem;
-    color: #0f0;
-    text-align: center;
-    margin-top: 1rem;
-    letter-spacing: 2px;
-  }
-
-  .message {
-    max-width: 700px;
-    margin: 4rem auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     font-size: 1.3rem;
-    line-height: 1.6;
-    color: #0f0;
-    text-align: center;
-    padding: 0 1rem;
+    color: #ffeb3b;
+    letter-spacing: 1.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
   }
 
-  .team {
-    font-weight: bold;
-    font-size: 1.5rem;
+  main {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
-    margin-top: 3rem;
-    color: #00ffff;
+  }
+
+  main p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 40px;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
   }
 
   .flags {
-    font-size: 4rem;
-    text-align: center;
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
   }
 
-  .typing {
-    font-family: monospace;
-    color: #0f0;
-    font-size: 1rem;
-    margin-top: 3rem;
-    white-space: nowrap;
+  .flags img {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .marquee-container {
+    position: relative;
+    width: 100%;
     overflow: hidden;
-    width: 0;
-    animation: typing 5s steps(40, end) forwards;
+    height: 80px;
+    background: linear-gradient(90deg, #800000, #ff8c00, #008000);
+    box-shadow: 0 0 15px #ff8c00;
+    border-radius: 8px;
   }
 
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+  .marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  /* Audio control styling */
-  .audio-container {
+  @keyframes marquee {
+    0% { transform: translateX(0%);}
+    100% { transform: translateX(-100%);}
+  }
+
+  footer {
     text-align: center;
-    margin-top: 40px;
-    color: #0f0;
-    font-family: 'Share Tech Mono', monospace;
+    padding: 12px 10px;
+    font-family: 'Roboto Mono', monospace;
+    color: #ccc;
+    font-size: 1rem;
+    background: #111;
+    box-shadow: inset 0 1px 3px rgba(255,255,255,0.05);
   }
-
-  audio {
-    outline: none;
-    width: 300px;
-    margin-top: 10px;
-  }
-
 </style>
 </head>
 <body>
 
-  <div class="glitch">HACKED!</div>
-  <div class="subtitle">israelministry-service.org</div>
+<header>
+  Notice from Bangladesh Cyber Team
+</header>
 
-  <div class="message">
-    <p>Dark Net Hacker Boys Team From Bangladeshi Muslim</p>
-    <p>We stand with Iran, Gaza, and all oppressed innocent Muslims worldwide.</p>
+<main>
+  <div class="flags" aria-label="Flags of Bangladesh, Iran and Gaza">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg" alt="Bangladesh Flag" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg" alt="Iran Flag" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Gaza_Strip.svg" alt="Gaza Flag" />
   </div>
 
-  <div class="team">Team CEO: Asraf Mahdi</div>
+  <p>
+    The website <a href="http://israelministry-service.org/" target="_blank" rel="noopener" style="color:#ffcc00; text-decoration:none; font-weight:700;">http://israelministry-service.org/</a> has been taken down by cyber attack.<br />
+    This is the blood's response of the innocent Muslims of Gaza and Iran.<br />
+    <strong>Justice for the oppressed.</strong>
+  </p>
 
-  <div class="flags">🇧🇩 🇮🇷 🇵🇸</div>
-
-  <div class="typing">Initializing cyber attack sequence... please wait...</div>
-
-  <div class="audio-container">
-    <p>Azan (Call to Prayer) - Played on request</p>
-    <audio controls autoplay loop>
-      <source src="https://cdn.islamic.network/adhan/audio/128kbps/makkah_masjid.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+  <div class="marquee-container" aria-label="Scrolling team name">
+    <div class="marquee-text" role="marquee" aria-live="polite" aria-relevant="all">
+      DARK NET HACKER BOYS TEAM FROM BANGLADESHI MUSLIM &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
   </div>
+</main>
+
+<footer>
+  &copy; 2025 Dark Net Hacker Boys Team
+</footer>
 
 </body>
 </html>
