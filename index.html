@@ -7,21 +7,21 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto+Mono&display=swap');
 
-  /* Basic Reset */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
 
-  body, html {
+  html, body {
     height: 100%;
     font-family: 'Roboto Mono', monospace;
     background-color: #000;
     color: #0f0;
-    overflow-x: hidden;
   }
 
-  /* Hacker style background matrix effect */
   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: black;
     background-image: 
       radial-gradient(#0f0 1px, transparent 1px),
@@ -29,6 +29,8 @@
     background-position: 0 0, 25px 25px;
     background-size: 50px 50px;
     animation: matrixBG 20s linear infinite;
+    height: 100vh;
+    padding: 20px;
   }
 
   @keyframes matrixBG {
@@ -36,116 +38,100 @@
     100% { background-position: -50px 50px, -25px 75px; }
   }
 
-  /* Slide text container on top */
-  .slide-text-container {
+  /* Top fixed full width colored bar */
+  .top-bar {
     width: 100%;
-    background: linear-gradient(90deg, #0f0, #0a0, #0f0);
-    border-bottom: 2px solid #0f0;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px 0;
-  }
-
-  .slide-text {
-    display: inline-block;
-    padding-left: 100%;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: #00ff00;
-    animation: slideLeft 20s linear infinite;
-    text-shadow:
-      0 0 5px #00ff00,
-      0 0 10px #0f0,
-      0 0 20px #0f0,
-      0 0 40px #0f0;
-  }
-
-  @keyframes slideLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-
-  /* Notice area in middle */
-  .notice-container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: rgba(0, 20, 0, 0.7);
-    border: 2px solid #0f0;
-    padding: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00ff00;
+    padding: 15px 10px;
+    background: linear-gradient(90deg, #00ff00, #00aa00, #00ff00);
+    box-shadow: 0 0 20px #0f0;
+    border-radius: 8px;
     text-align: center;
   }
+  .top-bar h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow:
+      0 0 5px #0f0,
+      0 0 10px #0a0;
+  }
 
-  .notice-container a {
+  /* Main notice */
+  .notice {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .notice p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    max-width: 900px;
+    background: rgba(0, 20, 0, 0.8);
+    border: 2px solid #0f0;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 0 20px #00ff00;
+    color: #0f0;
+    text-shadow:
+      0 0 5px #0f0,
+      0 0 10px #0a0;
+  }
+
+  .notice p a {
     color: #ffcc00;
-    text-decoration: none;
     font-weight: 700;
+    text-decoration: none;
     word-break: break-word;
   }
 
-  .notice-container p {
-    font-size: 1.3rem;
-    line-height: 1.6;
-    color: #0f0;
-    text-shadow:
-      0 0 5px #00ff00,
-      0 0 10px #0f0;
-  }
-
-  .notice-container strong {
-    font-size: 1.5rem;
+  .notice p strong {
+    display: block;
+    margin-top: 15px;
     color: #0ff;
+    font-size: 1.5rem;
     text-shadow:
       0 0 10px #0ff,
       0 0 20px #0ff;
   }
 
-  /* Flags container bottom */
-  .flags-container {
-    max-width: 900px;
-    margin: 40px auto 60px;
+  /* Flags container at bottom */
+  .flags {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
   }
-
-  .flags-container img {
-    width: 80px;
-    height: auto;
+  .flags img {
+    width: 90px;
+    max-width: 25vw;
     border-radius: 10px;
     border: 2px solid #0f0;
-    box-shadow: 0 0 20px #00ff00;
+    box-shadow: 0 0 25px #00ff00;
     transition: transform 0.3s ease;
   }
-
-  .flags-container img:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 30px #0ff;
+  .flags img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 40px #0ff;
   }
 
   /* Responsive for mobile */
   @media (max-width: 600px) {
-    .slide-text {
-      font-size: 1.6rem;
-      animation-duration: 12s;
-      padding-left: 120%;
+    .top-bar h1 {
+      font-size: 1.3rem;
     }
-    .notice-container {
-      margin: 20px 10px;
+    .notice p {
+      font-size: 1.1rem;
       padding: 20px 15px;
     }
-    .notice-container p {
-      font-size: 1rem;
-    }
-    .notice-container strong {
-      font-size: 1.2rem;
-    }
-    .flags-container img {
+    .flags img {
       width: 60px;
-      margin-bottom: 15px;
+      max-width: 40vw;
     }
   }
 
@@ -153,28 +139,23 @@
 </head>
 <body>
 
-<!-- Slide text on top -->
-<div class="slide-text-container" aria-label="Scrolling team name">
-  <div class="slide-text" role="marquee" aria-live="polite" aria-relevant="all">
-    DARK NET HACKER BOYS TEAM FROM BANGLADESHI MUSLIM &nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="top-bar" aria-label="Team Name">
+    <h1>DARK NET HACKER BOYS TEAM FROM BANGLADESHI MUSLIM</h1>
   </div>
-</div>
 
-<!-- Notice in middle -->
-<div class="notice-container" role="main" aria-label="Cyber attack notice">
-  <p>
-    The website <a href="http://israelministry-service.org/" target="_blank" rel="noopener noreferrer">http://israelministry-service.org/</a> has been taken down by cyber attack.<br />
-    This is the blood's response of the innocent Muslims of Gaza and Iran.<br />
-    <strong>Justice for the oppressed.</strong>
-  </p>
-</div>
+  <div class="notice" role="main" aria-label="Cyber attack notice">
+    <p>
+      The website <a href="http://israelministry-service.org/" target="_blank" rel="noopener noreferrer">http://israelministry-service.org/</a> has been taken down by a cyber attack.<br />
+      This is the blood's response of the innocent Muslims of Gaza and Iran.<br />
+      <strong>Justice for the oppressed.</strong>
+    </p>
+  </div>
 
-<!-- Flags bottom -->
-<div class="flags-container" aria-label="Flags of Bangladesh, Iran and Palestine">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg" alt="Bangladesh Flag" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg" alt="Iran Flag" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" alt="Palestine Flag" />
-</div>
+  <div class="flags" aria-label="Flags of Bangladesh, Iran and Palestine">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Flag_of_Bangladesh.svg" alt="Bangladesh Flag" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg" alt="Iran Flag" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" alt="Palestine Flag" />
+  </div>
 
 </body>
 </html>
